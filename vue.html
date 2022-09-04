@@ -11,8 +11,8 @@
     <pre>
         v-model
         v-for="assigment in assigments.filter(a => ! a.complete)" :key="assigment.id"
-    </pre>
-
+        v-show="inProgressAssigments.length" (display: none)
+        v-if="inProgressAssigments.length" (add section)
     <pre>
         Vue.createApp({
             data() {
