@@ -1,4 +1,4 @@
-<!-- Episode 6 Component Props -->
+<!-- Episode 5 One Vue Component Per File -->
 <!DOCTYPE html>
 <html lang="en" class="h-full">
 <head>
@@ -12,15 +12,16 @@
 
 <body class="h-full grid place-items-center">
     <div id="app">
-        
+        <!-- app-button component -->
+        <app-button type="secondary">Submit</app-button>
+        <!-- two instance -->
+        <app-button :processing="true">Click me</app-button>
+
     </div>
 
-    <script>
-        let app = {
-            
-        };
-
-        Vue.createApp(app).mount('#app');
+    <script type="module">
+        import episode_6_appComponent from "./js/components/episode_6_appComponent.js"
+        Vue.createApp(episode_6_appComponent).mount('#app');
     </script>
 </body>
 </html>
