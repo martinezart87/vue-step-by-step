@@ -13,6 +13,10 @@
         v-for="assigment in assigments.filter(a => ! a.complete)" :key="assigment.id"
         v-show="inProgressAssigments.length" (display: none)
         v-if="inProgressAssigments.length" (add section)
+        
+        The same:
+        :class="active ? 'text-red' : 'text-green'" @click="toggle"
+        v-bind:class="active ? 'text-red' : 'text-green'" v-on:click="toggle"
     <pre>
         Vue.createApp({
             data() {
