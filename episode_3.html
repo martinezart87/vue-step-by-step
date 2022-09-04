@@ -1,0 +1,85 @@
+<!-- Episode 3 Lists, Conditionals, and Computed Properties -->
+<!DOCTYPE html>
+<html lang="en" class="h-full">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://unpkg.com/vue@3"></script>
+    <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body class="h-full grid place-items-center">
+    <div id="app">
+        <section v-show="inProgressAssigments.length">
+            <h2 class="font-bold mb-2">In Progrss Assigments (zadania)</h2>
+
+            <ul>
+                <!-- <li>Finish project <input type="checkbox" name="" id=""></li>
+                <li>Read chapter 4 <input type="checkbox" name="" id=""></li>
+                <li>Turn in homework <input type="checkbox" name="" id=""></li> -->
+
+                <!-- foreach dla wszystkich elementów listy assigments -->
+                <!-- <li v-for="assigment in assigments"> -->
+
+                <!-- foreach dla elementów oznaczonych jako false -->
+                <li v-for="assigment in assigments.filter(a => ! a.complete)" :key="assigment.id">
+                    <label>
+                        {{ assigment.name }}
+                        <input type="checkbox" v-model="assigment.complete" name="" id="">
+                    </label>
+                </li>
+            </ul>
+
+            <!-- <pre>
+                {{ assigments }}
+            </pre> -->
+        </section>
+
+        <!-- show element if exists -->
+        <!-- v-show - ukrywa sekcję (display: none), v-if - dodaje sekcję  -->
+        <!-- <section v-show="assigments.filter(a => a.complete).length" class="mt-8"> -->
+        <section v-show="completedAssigments.length" class="mt-8">
+
+            <h2 class="font-bold mb-2">Completed Assigments (zadania)</h2>
+
+            <ul>
+               
+                <!-- filerowanie tylko oznaczonych jako true -->
+                <li v-for="assigment in assigments.filter(a => a.complete)" :key="assigment.id">
+                    <label>
+                        {{ assigment.name }}
+                        <input type="checkbox" v-model="assigment.complete" name="" id="">
+                    </label>
+                </li>
+            </ul>
+        </section>
+    </div>
+
+    <script>
+        let app = {
+            data() {
+                return {
+                    assigments: [
+                        { name: 'Finish project', complete: false, id: 1 },
+                        { name: 'Read chapter 4', complete: false, id: 2 },
+                        { name: 'Turn in homework', complete: false, id: 3 },
+                    ]
+                }
+            },
+
+            // obiekt computed
+            computed: {
+                inProgressAssigments() {
+                    return this.assigments.filter(assigment => ! assigment.complete);
+                },
+                completedAssigments() {
+                    return this.assigments.filter(assigment => assigment.complete);
+                }
+            }
+        };
+
+        Vue.createApp(app).mount('#app');
+    </script>
+</body>
+</html>
