@@ -10,6 +10,7 @@
     Tag attributes:
     <pre>
         v-model
+        v-for="assigment in assigments.filter(a => ! a.complete)" :key="assigment.id"
     </pre>
 
     <pre>
