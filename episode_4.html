@@ -17,9 +17,22 @@
 
     <script>
         let app = {
-            
+            components: {
+                'app-button': {
+                    mounted() {
+                        alert('hello');
+                    }
+                },
+                // 'assigments-list': {},
+                // 'assigments-list-item': {},
+                // 'accordion': {}
+            }
         };
+        // let AppButton = {};
+        // let AssigmentList = {};
+        // let AssigmentListItem = {};
 
+        // globalna definicja:
         Vue.createApp(app).mount('#app');
     </script>
 </body>
