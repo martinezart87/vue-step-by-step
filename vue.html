@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    Tag attributes:
+    <pre>
+        v-model
+    </pre>
+
+    <pre>
+        Vue.createApp({
+            data() {
+                return {
+                    greeting: 'What is up',
+                    assigments: [
+                        { name: 'Finish project', complete: false, id: 1 },
+                        { name: 'Read chapter 4', complete: false, id: 2 },
+                        { name: 'Turn in homework', complete: false, id: 3 },
+                    ]
+                };
+            },
+
+            mounted() {
+                setTimeout(() => { 
+                    this.greeting = 'Changed';
+                }, 3000);
+            },
+
+            methods: {
+                toggle() {
+                }
+            },
+
+            computed: {
+                inProgressAssigments() {
+                    return this.assigments.filter(assigment => ! assigment.complete);
+                },
+                completedAssigments() {
+                    return this.assigments.filter(assigment => assigment.complete);
+                }
+            }
+        }).mount('#app');
+    </pre>
+</body>
+</html>
