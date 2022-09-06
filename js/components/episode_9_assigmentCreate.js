@@ -19,7 +19,7 @@ export default {
     },
 
     methods: {
-        // odwołuje się do parenta
+        // odwołuje się do parenta 
         add() {
             this.$emit('add', this.newAssigment);
             // this.assigments.push({

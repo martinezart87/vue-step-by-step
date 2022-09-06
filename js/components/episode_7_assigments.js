@@ -46,7 +46,7 @@ export default {
     },
 
     methods: {
-        // bez refresha
+        // bez refresha 
         // add(e) {
         //     e.preventDefault();
         //     alert('hi');
