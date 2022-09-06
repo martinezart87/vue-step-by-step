@@ -1,20 +1,18 @@
 import episode_7_assigmentsList from "./episode_7_assigmentsList.js";
+import episode_9_assigmentCreate from "./episode_9_assigmentCreate.js";
 
 export default {
 
-    components: { episode_7_assigmentsList },
+    components: { episode_7_assigmentsList, episode_9_assigmentCreate },
     template: `
         <section class="space-y-6">
             <episode_7_assigmentsList :assigments="filters.inProgress" title="In progress"></episode_7_assigmentsList>
             <episode_7_assigmentsList :assigments="filters.completed" title="Completed"></episode_7_assigmentsList>
             
-            <form @submit.prevent="add">
-                <div class="border border-gray-600 text-black">
-                    <input v-model="newAssigment" placeholder="New assimgent..." class="p-2" />
-                    <button type="submit" class="bg-white text-black p-2 border-l">Add</button>
-                </div>
-            </form>
-        
+            <!-- <episode_9_assigmentCreate :assigments="assigments"></episode_9_assigmentCreate> 
+            v-on:add=""
+            --!>
+            <episode_9_assigmentCreate @add="add"></episode_9_assigmentCreate>
         </section>
     `,
 
@@ -25,8 +23,6 @@ export default {
                 { name: 'Read chapter 4', complete: false, id: 2 },
                 { name: 'Turn in homework', complete: false, id: 3 },
             ],
-
-            newAssigment: ''
         }
     },
 
@@ -55,16 +51,18 @@ export default {
         //     e.preventDefault();
         //     alert('hi');
         // }
-        add() {
+        add(name) {
+            // this.assigments.push({
+            //     name: this.newAssigment,
+            //     completed:false,
+            //     id: this.assigments.length + 1
+            // });
             this.assigments.push({
-                name: this.newAssigment,
+                name: name,
                 completed:false,
                 id: this.assigments.length + 1
             });
 
-            this.newAssigment = '';
-            // alert(this.newAssigment);
-            // document.querySelector
         }
     }
 }
