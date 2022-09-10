@@ -1,6 +1,11 @@
 # Vue 3: Step by Step
 
 Laracasts tutorial: https://laracasts.com/series/learn-vue-3-step-by-step
+Server run: npx serve
+Resources server run: npx json-server db.json -p 3001
+
+## Linear Diagram Vue
+![Previewing selected aritcle](https://github.com/martinezart87/vue-step-by-step/blob/master/img/Livecycle-Diagram.png)
 
 ## Section 1 Getting Started
 ### Episode 1 Vue 3 Absolute Basics
@@ -108,6 +113,11 @@ Things You'll Learn
 - Component hooks
 - json-server
 - Promises
+
+Other
+- create db.json
+- npm install json-server --save-dev
+- npx json-server db.json -p 3001
 
 ### Episode 14 More Flexible Components With Slots and Flags
 

@@ -18,11 +18,14 @@ export default {
 
     data() {
         return {
-            assigments: [
-                { name: 'Finish project', complete: false, id: 1, tag: 'math' },
-                { name: 'Read chapter 4', complete: false, id: 2, tag: 'sience' },
-                { name: 'Turn in homework', complete: false, id: 3, tag: 'math' },
-            ],
+            // assigments: [
+            //     { name: 'Finish project', complete: false, id: 1, tag: 'math' },
+            //     { name: 'Read chapter 4', complete: false, id: 2, tag: 'sience' },
+            //     { name: 'Turn in homework', complete: false, id: 3, tag: 'math' },
+            // ],
+
+            // Episode 13
+            assigments: [],
         }
     },
 
@@ -43,6 +46,18 @@ export default {
             };
         }
 
+    },
+
+    // Episode 13 after component has been created - mounted()
+    created() {
+       fetch('http://localhost:3001/assigments')
+            .then(response => response.json())
+            // .then(data => {
+            //     console.log(data);
+            // })
+            .then(assigments => {
+                this.assigments = assigments;
+            });
     },
 
     methods: {
