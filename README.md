@@ -1,7 +1,9 @@
 # Vue 3: Step by Step
 
 Laracasts tutorial: https://laracasts.com/series/learn-vue-3-step-by-step
+
 Server run: npx serve
+
 Resources server run: npx json-server db.json -p 3001
 
 ## Linear Diagram Vue
