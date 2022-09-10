@@ -124,3 +124,5 @@ So far, we've been working with components that only required a single, default 
 Things You'll Learn
 - Named Slots
 - $slots
+
+## Section 5 Vite
