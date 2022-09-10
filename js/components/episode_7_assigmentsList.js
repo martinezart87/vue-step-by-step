@@ -9,11 +9,19 @@ export default {
                 <span>({{ assigments.length }})</span>
             </h2>
             
-            <episode_11_assigmentsTags 
+            <!-- <episode_11_assigmentsTags 
                 :initial-tags="assigments.map(a => a.tag)"
                 :current-tag="currentTag"
                 @change="currentTag = $event"
+            /> -->
+
+            <!-- Episode 12 -->
+            <episode_11_assigmentsTags 
+                v-model:currentTag="currentTag"
+                :initial-tags="assigments.map(a => a.tag)"
             />
+
+            
 
             <ul class="mt-6">
                 <episode_7_assigment v-for="assigment in filteredAssigments" :key="assigment.id" :assigment="assigment">
