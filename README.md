@@ -5,7 +5,7 @@ Server run: npx serve
 Resources server run: npx json-server db.json -p 3001
 
 ## Linear Diagram Vue
-![Previewing selected aritcle](https://github.com/martinezart87/vue-step-by-step/blob/master/img/Livecycle-Diagram.png)
+![Previewing selected aritcle](https://github.com/martinezart87/vue-step-by-step/blob/main/img/Livecycle-Diagram.png)
 
 ## Section 1 Getting Started
 ### Episode 1 Vue 3 Absolute Basics
