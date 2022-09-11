@@ -5,14 +5,15 @@ export default {
 
     components: { episode_7_assigmentsList, episode_9_assigmentCreate },
     template: `
-        <section class="space-y-6">
-            <episode_7_assigmentsList :assigments="filters.inProgress" title="In progress"></episode_7_assigmentsList>
-            <episode_7_assigmentsList :assigments="filters.completed" title="Completed"></episode_7_assigmentsList>
+        <section class="flex gap-8">
+            <episode_7_assigmentsList :assigments="filters.inProgress" title="In progress">
+                <episode_9_assigmentCreate @add="add"></episode_9_assigmentCreate>
+            </episode_7_assigmentsList>
+            <episode_7_assigmentsList :assigments="filters.completed" title="Completed" can-toggle></episode_7_assigmentsList>
             
             <!-- <episode_9_assigmentCreate :assigments="assigments"></episode_9_assigmentCreate> 
             v-on:add=""
             --!>
-            <episode_9_assigmentCreate @add="add"></episode_9_assigmentCreate>
         </section>
     `,
 

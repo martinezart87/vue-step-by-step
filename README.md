@@ -129,6 +129,8 @@ Things You'll Learn
 - Component Slots
 - Feature Flags
 
+Add package.json - scripts. Console: npm run start
+
 ### Episode 15 Named Slots
 
 So far, we've been working with components that only required a single, default slot. But, of course in real life, you'll encounter situations where you need to insert content in multiple areas. In these cases, we can used named slots.
