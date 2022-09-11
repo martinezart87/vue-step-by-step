@@ -17,7 +17,7 @@
         The same:
         :class="active ? 'text-red' : 'text-green'" @click="toggle"
         v-bind:class="active ? 'text-red' : 'text-green'" v-on:click="toggle"
-
+        v-slot="name" = #name
         <form @submit="add"></form>
         <!-- default  action wthout refresh -->
         <form @submit.prevent="add">
