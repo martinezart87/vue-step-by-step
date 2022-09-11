@@ -1,10 +1,11 @@
 import episode_7_assigment from "./episode_7_assigment.js"
 import episode_11_assigmentsTags from "./episode_11_assigments-tags.js";
+import panel from "./panel.js";
 
 export default {
-    components: { episode_7_assigment, episode_11_assigmentsTags },
+    components: { episode_7_assigment, episode_11_assigmentsTags, panel },
     template: `
-        <section v-show="show && assigments.length" class="w-60 bg-gray-700 p-4 border border-gray-600 rounded-lg">
+        <panel v-show="show && assigments.length" class="w-60 bg-gray-700 p-4 border border-gray-600 rounded-lg">
             <div class="flex justify-between item-start">
                 <h2 class="font-bold mb-2">{{ title }}
                     <span>({{ assigments.length }})</span>
@@ -37,7 +38,11 @@ export default {
             </pre> -->
 
             <slot></slot>
-        </section>
+
+            <template #footer>
+                test
+            </template>
+        </panel>
     `,
 
     props: {
