@@ -1,4 +1,4 @@
-# Vue 3: Step by Step
+# Vue 3: Step by Step Part 1
 
 Laracasts tutorial: https://laracasts.com/series/learn-vue-3-step-by-step
 
@@ -138,5 +138,3 @@ So far, we've been working with components that only required a single, default 
 Things You'll Learn
 - Named Slots
 - $slots
-
-## Section 5 Vite
